@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Restaurant Statistics
+{% endblock %}
+
+{% block main %}
+    <h1>Statistics for {{ stats.name }}</h1>
+    <div class="statistics">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Statistic</th>
+                    <th scope="col">Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Average Rating</td>
+                    <td>{{ stats.avg_rating|round(2, 'common')|default('N/A', true) }}</td>
+                </tr>
+                <tr>
+                    <td>Total Sales</td>
+                    <td>₹{{ "%.2f"|format(stats.total_sales|default(0, true)) }}</td>
+                </tr>
+                <tr>
+                    <td>Total Orders</td>
+                    <td>{{ stats.total_orders }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

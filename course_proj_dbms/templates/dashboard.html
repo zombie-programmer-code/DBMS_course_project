@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Welcome to Our Food Delivery Service!
+{% endblock %}
+
+{% block main %}
+<div class="container mt-4">
+    <h1 class="mb-4">Welcome to Your Favorite Food Delivery Service!</h1>
+    <p>Get your food delivered fast & hot!</p>
+
+    <!-- Call to Action -->
+    <div class="row mb-4 justify-content-center">
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100">
+                <img src="{{ url_for('static', filename='delivery.webp') }}" class="card-img-top" alt="Fast delivery image" style="height: 200px; object-fit: cover;">
+                <div class="card-body">
+                    <h5 class="card-title">Fast Delivery</h5>
+                    <p class="card-text">We ensure your food reaches you in the quickest time possible.</p>
+                    <a href="/register" class="btn btn-primary">Sign Up Now</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100">
+                <img src="{{ url_for('static', filename='variety.webp') }}" class="card-img-top" alt="Variety of dishes image" style="height: 200px; object-fit: cover;">
+                <div class="card-body">
+                    <h5 class="card-title">Wide Range of Restaurants</h5>
+                    <p class="card-text">Choose from a wide variety of restaurants and cuisines.</p>
+                    <a href="/restaurants" class="btn btn-primary">Browse Restaurants</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features -->
+    <div class="row text-center justify-content-center">
+        <div class="col-md-6 col-lg-4 mb-3">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">No Minimum Order</h5>
+                    <p class="card-text">Order as much or as little as you want. No restrictions.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-3">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">24/7 Support</h5>
+                    <p class="card-text">Our team is here to help you at any time, day or night.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Link -->
+    <div class="text-center mt-4">
+        <p>Already have an account?</p>
+        <a href="/login" class="btn btn-success btn-lg">Login Here</a>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    My Comments
+{% endblock %}
+
+{% block main %}
+    <h1>My Comments</h1>
+    <div class="container mt-4">
+        {% if comments %}
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Order No</th>
+                        <th scope="col">Restaurant Name</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Time</th>
+                        <th scope="col">Comment Text</th>
+                        <th scope="col">Rating</th>
+                        <th scope="col">Praise/Complaint</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for comment in comments %}
+                        <tr>
+                            <td>{{ comment.placed_order_id }}</td>
+                            <td>{{ comment.restaurant_name }}</td>
+                            <td>{{ comment.price }}</td>
+                            <td>{{ comment.ts }}</td>
+                            <td>{{ comment.comment_text }}</td>
+                            <td>{{ comment.rating }}</td>
+                            <td>{{ 'Praise' if comment.is_praise else 'Complaint' }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>You have not written any comments yet.</p>
+        {% endif %}
+    </div>
+{% endblock %}

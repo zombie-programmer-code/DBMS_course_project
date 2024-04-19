@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}User Statistics{% endblock %}
+
+{% block main %}
+<h1>User Statistics</h1>
+
+{% if user_stats %}
+<table class="table">
+    <thead>
+        <tr>
+            <th>Restaurant Name</th>
+            <th>Number of Orders</th>
+            <th>Total Spent</th>
+            <th>Average Rating</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for stat in user_stats %}
+        <tr>
+            <td>{{ stat.restaurant_name }}</td>
+            <td>{{ stat.number_of_orders }}</td>
+            <td>₹{{ stat.total_spent }}</td>
+            <td>{{ stat.avg_rating|default('N/A')|round(2) }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>No statistics available.</p>
+{% endif %}
+
+{% endblock %}

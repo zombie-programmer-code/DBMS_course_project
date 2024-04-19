@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Select Restaurant
+{% endblock %}
+
+{% block main %}
+    <h1>Select a Restaurant</h1>
+
+    <!-- Form for filtering by cuisine type -->
+    <form action="{{ url_for('order') }}" method="post">
+        <div class="form-group">
+            <label for="cuisineType">Cuisine Type:</label>
+            <input type="text" id="cuisineType" name="cuisineType" placeholder="Enter Cuisine Type" class="form-control">
+            <button type="submit" class="btn btn-primary">Filter</button>
+        </div>
+    </form>
+
+    <!-- Table of restaurants -->
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Location</th>
+                <th>Cuisine Type</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for restaurant in restaurants %}
+            <tr>
+                <td>{{ restaurant.name }}</td>
+                <td>{{ restaurant.location }}</td>
+                <td>{{ restaurant.cuisineType }}</td>
+                <td>
+                    <a href="/menu/{{ restaurant.r_id }}" class="btn btn-primary">View Menu</a>
+                </td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="4">No restaurants found.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

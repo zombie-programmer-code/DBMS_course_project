@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Homepage
+{% endblock %}
+
+{% block main %}
+<h1>Your Details</h1>
+<p>Thank you for choosing our website to order your food!</p>
+
+{% for item in customer_details %}
+<div class="card" style="width: 100%; margin-top: 20px;">
+    <div class="card-body">
+        <h5 class="card-title">Welcome, {{ item.customer_name }}!</h5>
+        <p class="card-text"><strong>ID Number:</strong> {{ item.id }}</p>
+        <p class="card-text"><strong>Address:</strong> {{ item.address }}</p>
+        <p class="card-text"><strong>Contact Number:</strong> +91{{ item.contact_phone }}</p>
+        <p class="card-text"><strong>Email:</strong> {{ item.email }}</p>
+        <p class="card-text"><strong>Time of Joining:</strong> {{ item.time_joined }}</p>
+        <p class="card-text"><strong>Account Balance:</strong> ₹{{ item.cash }}</p>
+    </div>
+</div>
+{% endfor %}
+
+<div class="stylish-text" style="margin-top: 40px;">
+    <h2>New Addition to Our Restaurants List!</h2>
+</div>
+
+<div style="margin-top: 20px;">
+    <img src="{{ url_for('static', filename='royal_china.jpeg') }}" alt="Royal China Restaurant" style="max-width: 100%; height: auto;">
+</div>
+
+{% endblock %}

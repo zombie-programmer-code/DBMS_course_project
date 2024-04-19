@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Search Food Item
+{% endblock %}
+
+{% block main %}
+    <h1>Search for a Food Item</h1>
+    <form action="{{ url_for('search_food_item') }}" method="post">
+        <input type="text" name="food_item" placeholder="Enter food item" required>
+        <button type="submit">Search</button>
+    </form>
+{% endblock %}

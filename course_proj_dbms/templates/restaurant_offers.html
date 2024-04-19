@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Special Offers at Restaurant
+{% endblock %}
+
+{% block main %}
+<h1>Special Offers at Restaurant</h1>
+<form action="{{ url_for('confirm_order_offer') }}" method="post">
+    <table class = "table">
+        <thead>
+            <tr>
+                <th>Item Name</th>
+                <th>Original Price</th>
+                <th>Offer Price</th>
+                <th>Quantity</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for offer in offers %}
+            <tr>
+                <td>{{ offer.item_name }}</td>
+                <td>{{ offer.price }}</td>
+                <td>{{ offer.offer_price }}</td>
+                <td>
+                    <input type="number" name="quantity-{{ offer.menu_item_id }}" min="0" value="0">
+                    <input type="hidden" name="offer_id-{{ offer.menu_item_id }}" value="{{ offer.offer_id }}">
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <input type="hidden" name="restaurant_id" value="{{ restaurant_id }}">
+    <input type="submit" value="Place Order">
+</form>
+{% endblock %}

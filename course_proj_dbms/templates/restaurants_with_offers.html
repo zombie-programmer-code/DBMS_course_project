@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Restaurants with Special Offers
+{% endblock %}
+
+{% block main %}
+<h1>Restaurants with Special Offers</h1>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Restaurant Name</th>
+            <th>Location</th>
+            <th>Cuisine Type</th>
+            <th>Email</th>
+            <th>View Offers</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for restaurant in restaurants %}
+        <tr>
+            <td>{{ restaurant.name }}</td>
+            <td>{{restaurant.location }}</td>
+            <td>{{restaurant.cuisineType }}</td>
+            <td>{{restaurant.email}}</td>
+            <td>
+                <a href="{{ url_for('restaurant_offers', restaurant_id=restaurant.r_id) }}" class="btn btn-primary">
+                    View Offers
+                </a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Order Status
+{% endblock %}
+
+{% block main %}
+<h1>Order Status for Order ID: {{ order_id }}</h1>
+
+{% if status_updates %}
+<table class="table">
+    <thead>
+        <tr>
+            <th>Time</th>
+            <th>Status Update</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for update in status_updates %}
+        <tr>
+            <td>{{ update.ts }}</td>
+            <td>{{ update.status }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>No status updates found for this order. It may have been delivered or does not exist.</p>
+{% endif %}
+
+<a href="{{ url_for('order_history') }}" class="btn btn-link">Back to Order History</a>
+{% endblock %}

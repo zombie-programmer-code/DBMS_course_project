@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Order History
+{% endblock %}
+
+{% block main %}
+    <h1>Your Order History</h1>
+
+    {% if orders %}
+        <table class ="table">
+            <thead>
+                <tr>
+                    <th>Order #</th>
+                    <th>Order ID</th>
+                    <th>Restaurant name</th>
+                    <th>Time of order</th>
+                    <th>Status</th>
+                    <th>Comment</th>
+                    <th>Item</th>
+                    <th>Quantity</th>
+                    <th>Price per Item</th>
+                    <th>Subtotal</th>
+                    <th>Grand Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% set order_number = 0 %}
+                {% for order in orders %}
+                    {% set row_span_count = order['items']|length %}
+                    {% for item in order['items'] %}
+                        {% set item_subtotal = item['quantity'] * item['item_price'] %}
+                        <tr>
+                            {% if loop.first %}
+                                <td rowspan="{{ row_span_count + 1 }}">{{ order['order_number'] }}</td>
+                                <td rowspan="{{ row_span_count + 1 }}">{{ order['order_id'] }}</td>
+                                <td rowspan="{{ row_span_count + 1 }}">{{ order['restaurant_name'] }}</td>
+                                <td rowspan="{{ row_span_count + 1 }}">{{ order['order_time'] }}</td>
+                                <td rowspan="{{ row_span_count }}">
+                                    <a href="{{ url_for('order_status', order_id=order.order_id) }}" class="btn btn-primary">Status</a>
+                                </td>
+                                <td rowspan="{{ row_span_count }}">
+                                    <a href="{{ url_for('comment_on_order', order_id=order.order_id) }}" class="btn btn-primary">Comment</a>
+                                </td>
+                            {% endif %}
+                            <td>{{ item['item_name'] }}</td>
+                            <td>{{ item['quantity'] }}</td>
+                            <td>₹{{ item['item_price'] }}</td>
+                            <td>₹{{ item_subtotal }}</td>
+                        </tr>
+                    {% endfor %}
+                    <!-- This row is for the order total -->
+                    <tr class="order-total-row">
+                        <td colspan="5">Order Total:</td>
+                        <td colspan="2">₹{{ order['total_price'] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No past orders found.</p>
+    {% endif %}
+{% endblock %}

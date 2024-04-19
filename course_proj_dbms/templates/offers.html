@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Special Offers
+{% endblock %}
+
+{% block main %}
+    <h1>Special Offers</h1>
+    <form action="{{ url_for('confirm_order_offer') }}" method="post">
+        <table class = "table">
+            <thead>
+                <tr>
+                    <th>Restaurant</th>
+                    <th>Item Name</th>
+                    <th>Original Price</th>
+                    <th>Offer Price</th>
+                    <th>Active From</th>
+                    <th>Active Until</th>
+                    <th>Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in offers_items %}
+                <tr>
+                    <td>{{ item.restaurant_name }}</td>
+                    <td>{{ item.item_name }}</td>
+                    <td>{{ item.price }}</td>
+                    <td>{{ item.offer_price }}</td>
+                    <td>{{ item.date_active_from }}</td>
+                    <td>{{ item.date_active_to }}</td>
+                    <td>
+                        <input type="number" name="quantity-{{ item.id }}" min="0" value="0">
+                        <input type="hidden" name="offer_id-{{ item.id }}" value="{{ item.offer_id }}">
+                        <input type="hidden" name="offer_price-{{ item.id }}" value="{{ item.offer_price }}">
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <button type="submit" class="btn btn-primary">Place Order</button>
+    </form>
+{% endblock %}

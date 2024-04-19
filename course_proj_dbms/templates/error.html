@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Error - Online Food Delivery Service
+{% endblock %}
+
+{% block main %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h1>Oops!</h1>
+            <h2>Something went wrong</h2>
+            <p>We encountered an error processing your request. Please try again later.</p>
+            <a href="/" class="btn btn-primary">Go Home</a>
+            <a href="javascript:history.back()" class="btn btn-secondary">Go Back</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

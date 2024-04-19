@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Search Results
+{% endblock %}
+
+{% block main %}
+    <h1>Search Results</h1>
+    <table class = "table">
+        <thead>
+            <tr>
+                <th>Restaurant Name</th>
+                <th>Location</th>
+                <th>Cuisine Type</th>
+                <th>Food Item</th>
+                <th>Price</th>
+                <th>Menu</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for result in results %}
+            <tr>
+                <td>{{ result.name }}</td>
+                <td>{{ result.location }}</td>
+                <td>{{ result.cuisineType }}</td>
+                <td>{{ result.item_name }}</td>
+                <td>{{ result.price }}</td>
+                <td>
+                    <a href="{{ url_for('menu', restaurant_id=result.restaurant_id) }}" class="btn btn-primary">View Menu</a>
+                </td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="6">No results found.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

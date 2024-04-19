@@ -1,0 +1,70 @@
+id,item_name,price,active,Restaurant_r_id
+1,Chicken Zinger Burger,150,TRUE,4
+2,Veg Burger,140,TRUE,4
+3,Zinger Doubles,300,TRUE,4
+4,Zinger Combo,290,TRUE,4
+5,"Chicken Zinger, Popcorn Chicken",480,TRUE,4
+6,Big 8,499,TRUE,4
+7,Veg Strips,135,TRUE,4
+8,Potato Crisper,40,TRUE,4
+9,Mutton Shami Kebab,325,TRUE,1
+10,Tandoori Aloo,235,TRUE,1
+11,Chicken Irani Kebab,290,TRUE,1
+12,Prawn Cocktail,265,TRUE,1
+13,Orange Juice,170,TRUE,1
+14,Virgin Mojito,175,TRUE,1
+15,Fruit Cup,130,TRUE,1
+16,Cream of Tomato,150,TRUE,1
+17,Cream of Sweet Corn Chicken,165,TRUE,1
+18,Chicken Curry,250,TRUE,1
+19,Chicken Butter Masala,290,TRUE,1
+20,Prawn Curry,405,TRUE,1
+21,Egg Curry,230,TRUE,1
+22,Chicken Tandoori Full,450,TRUE,1
+23,Chicken Tandoori Half,245,TRUE,1
+24,Vegetable Marakesh,375,TRUE,1
+25,Makhan Nan,100,TRUE,1
+26,Fresh Salad,100,TRUE,1
+27,Chicken Fried Rice,255,TRUE,1
+28,Raita,135,TRUE,1
+29,Vanilla/Strawberry/Chocolate Ice Cream,120,TRUE,1
+30,Dahi ke Kebab,100,TRUE,2
+31,Cajun Spike Potato,110,TRUE,2
+32,Tandoori Wings,200,TRUE,2
+33,Chicken Seekh Kebab,240,TRUE,2
+34,Chilly Garlic Prawns,220,TRUE,2
+35,Papri Chaat,130,TRUE,2
+37,Sev Puri,120,TRUE,2
+38,Pasta Salad,120,TRUE,2
+39,Payasam,110,TRUE,2
+40,Chocolate Brownie,150,TRUE,2
+41,Chicken Biriyani,260,TRUE,2
+42,Kadhai Chicken,245,TRUE,2
+43,Fish Curry,180,TRUE,2
+44,Fry Papad,60,TRUE,2
+45,Lemon Wedges,65,TRUE,2
+46,Jalebi,80,TRUE,2
+47,Chocolate Pastry,140,TRUE,2
+48,English Breakfast,850,TRUE,3
+49,English Breakfast with Juice,1000,TRUE,3
+50,Jagger's Breakfast,1000,TRUE,3
+51,American Breakfast,900,TRUE,3
+52,Vegan Breakfast,800,TRUE,3
+53,Cereal,400,TRUE,3
+54,Cheese Tomato Sandwich,600,TRUE,3
+55,French Fries,350,TRUE,3
+56,Hash Brown,250,TRUE,3
+57,Tuna cheese panini sandwich,750,TRUE,3
+58,"Sausage, egg, bacon sandwich",800,TRUE,3
+59,Cream tea,350,TRUE,3
+60,Coffee sprungli,400,TRUE,3
+61,Hot chocolate,250,TRUE,3
+62,Three egg omelette,550,TRUE,3
+63,Chicken mayonnaise,450,TRUE,3
+64,Vegetable Burger,520,TRUE,3
+65,Chicken Burger,580,TRUE,3
+66,Iced lemon tea,210,TRUE,3
+67,Flurys sundae,510,TRUE,3
+68,Crepe Gateau,400,TRUE,3
+69,Brownie with ice cream,400,TRUE,3
+70,Pear belle helene,450,TRUE,3

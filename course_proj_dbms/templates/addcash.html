@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add Cash
+{% endblock %}
+
+{% block main %}
+    <h1>Add Cash to Your Account</h1>
+    <h2>Current balance: ₹{{ current_cash }}</h2>
+    <form action="/addcash" method="post">
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" id="cash_user" name="cash" placeholder="Enter cash" type="text">
+        </div>
+        <button type="submit" class="btn btn-primary">Add Cash</button>
+    </form>
+{% endblock %}

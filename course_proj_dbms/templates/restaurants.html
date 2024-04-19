@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Restaurants
+{% endblock %}
+
+{% block main %}
+<h1>Restaurants</h1>
+<!-- Add a form for filtering by cuisine type -->
+<form action="{{ url_for('restaurants_view') }}" method="post">
+    <input type="text" name="cuisineType" placeholder="Enter Cuisine Type" required>
+    <button type="submit">Filter</button>
+</form>
+
+<!-- Display the restaurants in a table -->
+<table class = "table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Cuisine Type</th>
+            <th>Email</th>
+            <!-- Other fields as necessary -->
+        </tr>
+    </thead>
+    <tbody>
+        {% for restaurant in restaurants %}
+        <tr>
+            <td>{{ restaurant.name }}</td>
+            <td>{{ restaurant.location }}</td>
+            <td>{{ restaurant.cuisineType }}</td>
+            <td>{{ restaurant.email }}</td>
+            <!-- Other fields as necessary -->
+        </tr>
+        {% else %}
+        <tr>
+            <td colspan="3">No restaurants found.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

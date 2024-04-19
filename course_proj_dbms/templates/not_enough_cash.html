@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Not enough cash
+{% endblock %}
+
+{% block main %}
+<h1>Not enough cash in your account!</h1>
+
+<p>Would you like to add cash to your account? Click on <a href="{{ url_for('addcash') }}">this link</a> to proceed.</p>
+{% endblock %}
