@@ -1,4 +1,4 @@
-# FitAI
+# Online Food Delivery System
 DBMS lab project: Online Food Deivery System
 
 Features
@@ -34,6 +34,7 @@ Getting Started
 6. View your order history, comment and rate your order.
 7. View restaurant ratings and other statistics.
 8. View your own statistics.
+   
 Contributors:
 -------------
 Saptarshi Mukherjee
