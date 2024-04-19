@@ -15,15 +15,15 @@ Installation
 1. Clone the repository:
    ```bash
    git clone https://github.com/zombie-programmer-code/course_project_dbms.git
-)](
+
 2. Install the dependencies
     ```bash
     pip install -r requirements.txt
-   )](
+
 3. Run the application:
     ```bash
     flask run
-   )](
+    
 Getting Started
 ----------------
 1. Register or login to your account.
