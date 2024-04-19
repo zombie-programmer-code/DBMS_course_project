@@ -14,7 +14,7 @@ Installation
 ------------
 1. Clone the repository:
    ```bash
-   git clone https://github.com/zombie-programmer-code/course_project_dbms.git
+   git clone https://github.com/zombie-programmer-code/DBMS_course_project.git
 
 2. Install the dependencies
     ```bash
