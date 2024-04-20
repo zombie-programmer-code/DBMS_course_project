@@ -374,15 +374,15 @@ def user_stats():
     # Adjusted SQL query to calculate statistics without direct customer_id in comment table
     user_stats = db.execute("""
     SELECT 
-        r.name AS restaurant_name, 
-        COUNT(po.id) AS number_of_orders, 
-        SUM(po.final_price) AS total_spent, 
-        AVG(c.rating) AS avg_rating
-    FROM placed_order po
-    INNER JOIN restaurant r ON po.Restaurant_r_id = r.r_id
-    LEFT JOIN comment c ON po.id = c.placed_order_id
-    WHERE po.customer_id = ?
-    GROUP BY r.name
+    r.name AS restaurant_name, 
+    COUNT(po.id) AS number_of_orders, 
+    SUM(po.final_price) AS total_spent, 
+    ROUND(AVG(c.rating), 2) AS avg_rating 
+FROM placed_order po
+INNER JOIN restaurant r ON po.Restaurant_r_id = r.r_id
+LEFT JOIN comment c ON po.id = c.placed_order_id
+WHERE po.customer_id = ?
+GROUP BY r.name
     """, user_id)
 
     return render_template("user_stats.html", user_stats=user_stats)
