@@ -21,7 +21,7 @@
             <td>{{ stat.restaurant_name }}</td>
             <td>{{ stat.number_of_orders }}</td>
             <td>₹{{ stat.total_spent }}</td>
-            <td>{{ stat.avg_rating|default('N/A')|round(2) }}</td>
+            <td>{{ stat.avg_rating }}</td>
         </tr>
         {% endfor %}
     </tbody>
