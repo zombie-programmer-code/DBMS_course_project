@@ -1,5 +1,5 @@
 # Online Food Delivery System
-DBMS lab project: Online Food Deivery System
+DBMS lab project: Online Food Delivery System
 
 Features
 --------
